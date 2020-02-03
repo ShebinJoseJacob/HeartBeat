@@ -3,7 +3,7 @@ project AWS is
    for Object_Dir use "obj";
    for Exec_Dir use "bin";
    for Source_Dirs use ("src");
-   for Main use ("read.adb");
+   for Main use ("hb.adb");
    type Module_Type is
       ("MOD_WIN", "MOD_RPI");
    Module : Module_Type := external ("Module", "MOD_RPI");
@@ -16,10 +16,10 @@ project AWS is
       case Module is
 
          when "MOD_WIN" =>
-            for Executable ("read.adb") use "aws_win";
+            for Executable ("hb.adb") use "hb";
 
          when "MOD_RPI" =>
-            for Executable ("read.adb") use "aws";
+            for Executable ("hb.adb") use "hb";
       end case;
    end Builder;
 
