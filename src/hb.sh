@@ -18,7 +18,7 @@ do
 	LSSH=$(( $(i2cget -y -a 1 0x5b 0x53)))
 	let "n4 = $(($LSSH))"
 	let "n5 = $n1+$n2+$n3+$n4"
-	let "h=($n5/2048)"
+	let "h=($n5/910)"
 	echo "Heart Rate $h bpm"
 
 	i2cset -y -a 1 0x5b 0x40 0x80
