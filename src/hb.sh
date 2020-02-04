@@ -10,9 +10,9 @@ do
         i2cset -y -a 1 0x5b 0x46 0x03
 	MP=$(($(i2cget -y -a 1 0x5b 0x50)))
 	let "n0 = $(($MP*(2**14)))"
-	LP=$(( $(i2cget -y -a 1 0x5d 0x51)))
+	LP=$(( $(i2cget -y -a 1 0x5b 0x51)))
 	let "n2 = $(($LP*(2**6)))"
-	LSP=$(( $(i2cget -y -a 1 0x5d 0x52)))
+	LSP=$(( $(i2cget -y -a 1 0x5b 0x52)))
 	let "n3 = $(($LSP))"
 	let "n4 = $n1+$n2+$n3"
 	let "p=($n4/2048)"
