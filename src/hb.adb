@@ -5,6 +5,5 @@ with i2c;
 
 procedure Read is 
 begin
-  i2c.write;
   i2c.read;
 end Read;
